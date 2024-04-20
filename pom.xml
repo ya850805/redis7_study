@@ -50,6 +50,13 @@
             <artifactId>jedis</artifactId>
             <version>4.3.1</version>
         </dependency>
+
+        <!--lettuce-->
+        <dependency>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>6.2.1.RELEASE</version>
+        </dependency>
     </dependencies>
 
     <build>
