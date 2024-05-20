@@ -4,14 +4,34 @@ server:
 spring:
   application:
     name: redis7_study
+
+# redis??
+#  redis:
+#    database: 0
+#    host: 127.0.0.1
+#    port: 6379
+#    password: 111111
+#    lettuce:
+#      pool:
+#        max-active: 8
+#        max-wait: -1ms
+#        max-idle: 8
+#        min-idle: 0
+
+
+# redis??
   redis:
-    database: 0
-    host: 127.0.0.1
-    port: 6379
-    password: 111111
+    cluster:
+      max-redirects: 3 #獲取失敗 最大重定向次數
+      nodes: 127.0.0.1:6381,127.0.0.1:6382,127.0.0.1:6383,127.0.0.1:6384,127.0.0.1:6385,127.0.0.1:6386
     lettuce:
       pool:
         max-active: 8
         max-wait: -1ms
         max-idle: 8
         min-idle: 0
+      cluster:
+        refresh:
+          adaptive: true #支持集群拓樸動態感應刷新，自適應拓樸刷新是否適用所有可用的更新，默認false關閉。
+          period: 2000 #定時刷新
+    password: 111111
